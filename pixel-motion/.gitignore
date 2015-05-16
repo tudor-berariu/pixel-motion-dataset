@@ -1,0 +1,10 @@
+# Emacs backup and temporary files
+*~
+\#*#
+
+# Build directory
+build/*
+
+# Executables
+
+generate-dataset
