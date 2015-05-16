@@ -21,6 +21,7 @@ struct Pixel {
   Pixel(char, char, char);
   
   static Pixel getRed();
+  static Pixel getNoise();
   static Pixel getBackground();
 
   friend ostream& operator<<(ostream&, const Pixel&);

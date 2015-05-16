@@ -5,8 +5,13 @@ Pixel::Pixel() : r{' '}, g{' '}, b{' '} { }
 Pixel::Pixel(char r, char g, char b) : r{r}, g{g}, b{b} { }
 
 Pixel Pixel::getRed() {
-  Pixel red('X', ' ', ' ');
+  Pixel red('X', 'X', 'X');
   return red;
+}
+
+Pixel Pixel::getNoise() {
+  Pixel blue('*', '*', '*');
+  return blue;
 }
 
 Pixel Pixel::getBackground() {
