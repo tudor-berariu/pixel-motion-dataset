@@ -11,10 +11,10 @@ using namespace std;
 class Snake {
 public:
   enum class HDirection {LR, RL};
-  enum class VDirection {Up, Down} 
+  enum class VDirection {Up, Down};
 
-  Snake(int, int, HDirection, VDirection, int);
-  Snake(int, int, HDirection, VDirection, int, double);
+  Snake(int, int, HDirection, VDirection);
+  Snake(int, int, HDirection, VDirection, double);
 
   Screen getNextScree();
 
