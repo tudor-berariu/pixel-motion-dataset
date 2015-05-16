@@ -9,11 +9,11 @@ using namespace std;
 
 void print_screen(Screen s) {
   char up_left[] = {(char)0xe2, (char)0x95, (char)0x94, (char)0};
-  char up_right[] = {0xe2, 0x95, 0x97, 0};
-  char down_left[] = {0xe2, 0x95, 0x9a, 0};
-  char down_right[] = {0xe2, 0x95, 0x9d, 0};
-  char vertical[] = {0xe2, 0x95, 0x91, 0};
-  char horizontal[] = {0xe2, 0x95, 0x90, 0};
+  char up_right[] = {(char)0xe2, (char)0x95, (char)0x97, (char)0};
+  char down_left[] = {(char)0xe2, (char)0x95, (char)0x9a, (char)0};
+  char down_right[] = {(char)0xe2, (char)0x95, (char)0x9d, (char)0};
+  char vertical[] = {(char)0xe2, (char)0x95, (char)0x91, (char)0};
+  char horizontal[] = {(char)0xe2, (char)0x95, (char)0x90, (char)0};
 
   cout << up_left;
   for (size_t c = 0; c < s[0].size(); c++) cout << horizontal;

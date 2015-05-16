@@ -1,6 +1,7 @@
-# Emacs backup and temporary files
+# Emacs & VIM backup and temporary files
 *~
 \#*#
+*.swp
 
 # Build directory
 build/*
