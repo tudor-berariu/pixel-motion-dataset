@@ -23,6 +23,8 @@ public:
   Coord move();
   void reset();
 
+  int print() const;
+
 private:
   Direction direction;
   Orientation orientation;

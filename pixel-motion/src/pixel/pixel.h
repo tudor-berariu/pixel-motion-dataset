@@ -17,6 +17,8 @@ struct Pixel {
   char g;
   char b;
 
+  float rf, gf, bf;
+
   Pixel();
   Pixel(char, char, char);
   

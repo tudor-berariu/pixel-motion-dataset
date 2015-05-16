@@ -21,7 +21,7 @@ class Motion {
   Motion(int, int, int, int, int, int, double);
 
   Screen getNextScreen();
-  virtual Coord move() =0;
+  virtual Coord move()=0;
 
  private:
 

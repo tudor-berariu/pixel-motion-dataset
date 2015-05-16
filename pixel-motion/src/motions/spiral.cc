@@ -36,6 +36,9 @@ Spiral::Coord Spiral::move() {
   if (new_row == center.row && new_col == center.col) {
     reset();
   }
+  if (radius > real_height/2 && radius > real_width/2) {
+    reset();
+  }
   return Coord{new_row, new_col};
 }
 

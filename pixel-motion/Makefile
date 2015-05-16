@@ -24,14 +24,16 @@ SHELL := /bin/sh
 
 # compile options
 CC := gcc
-CCFLAGS := -Wall -std=c++0x -Ofast
+CCFLAGS := -Wall -std=c++0x
 LIBS := -lm
 LIBSTD := -lstdc++
-LIBMMGTK := #`pkg-config gtkmm-3.0 --cflags --libs`
+LIBMMGTK := `pkg-config gtkmm-3.0 --cflags --libs`
 LIB := $(LIBS) $(LIBMMGTK) $(LIBSTD)
 
 ifeq ($(MAKECMDGOALS),debug)
-override CCFLAGS := -g $(CCFLAGS)
+override CCFLAGS := -g -O0 $(CCFLAGS)
+else
+override CCFLAGS := -Ofast $(CCFLAGS)
 endif
 
 C := $(CC) $(CCFLAGS)

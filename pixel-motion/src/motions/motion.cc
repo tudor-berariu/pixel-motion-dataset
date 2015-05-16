@@ -29,12 +29,12 @@ Screen Motion::getNextScreen() {
       (*col_it) = (put_noise(e) < noise) ? Pixel::getNoise() : Pixel::getBackground();
 
   Coord c = move();
-  cout << c << " -- scale --> ";
+  //cout << c << " -- scale --> ";
   c.scale(v_stride, h_stride);
-  cout << c << " -- rot --> ";
+  //cout << c << " -- rot --> ";
   c.rotate(rotation, height / 2, width / 2);
 
-  cout << c << endl;
+  //cout << c << endl;
   for (int row = c.row; row < (c.row + b_size); row++)
     for (int col = c.col; col < (c.col + b_size); col++)
       if (row >= 0 && row < height && col >= 0 && col < width)

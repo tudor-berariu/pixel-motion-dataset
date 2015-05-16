@@ -32,11 +32,11 @@ void print_screen(Screen s) {
 int main(int argc, char * argv[])
 {
   Spiral *s = new Spiral(40, 60, 1, 2, 35,
-                         Spiral::Direction::Clock, Spiral::Orientation::In,
-                         2, 0.0);
+                         Spiral::Direction::Clock, Spiral::Orientation::Out,
+                         1, 0.0);
   for(int i = 0; i < 1000; i++) {
     print_screen(s->getNextScreen());
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
   }
   return 0;
 }
