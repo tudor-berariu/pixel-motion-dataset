@@ -16,7 +16,7 @@ void print_screen(Screen s) {
   char horizontal[] = {0xe2, 0x95, 0x90, 0};
 
   cout << up_left;
-  for (size_t c = 0; c < s.size(); c++) cout << horizontal;
+  for (size_t c = 0; c < s[0].size(); c++) cout << horizontal;
   cout << up_right << endl;
 
   for (auto row : s) {
@@ -25,16 +25,18 @@ void print_screen(Screen s) {
     cout << vertical << endl;
   }
   cout << down_left;
-  for (size_t c = 0; c < s.size(); c++) cout << horizontal;
+  for (size_t c = 0; c < s[0].size(); c++) cout << horizontal;
   cout << down_right << endl;
 }
 
 int main(int argc, char * argv[])
 {
-  Spiral *s = new Spiral(10, 10, Spiral::Direction::Trig, Spiral::Orientation::In);
-  for(int i = 0; i < 100; i++) {
+  Spiral *s = new Spiral(40, 60, 1, 2, 35,
+                         Spiral::Direction::Clock, Spiral::Orientation::In,
+                         2, 0.0);
+  for(int i = 0; i < 1000; i++) {
     print_screen(s->getNextScreen());
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
   }
   return 0;
 }
