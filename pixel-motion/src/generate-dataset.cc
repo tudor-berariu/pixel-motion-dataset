@@ -7,28 +7,34 @@
 
 using namespace std;
 
+void print_screen(Screen s) {
+  char up_left[] = {(char)0xe2, (char)0x95, (char)0x94, (char)0};
+  char up_right[] = {0xe2, 0x95, 0x97, 0};
+  char down_left[] = {0xe2, 0x95, 0x9a, 0};
+  char down_right[] = {0xe2, 0x95, 0x9d, 0};
+  char vertical[] = {0xe2, 0x95, 0x91, 0};
+  char horizontal[] = {0xe2, 0x95, 0x90, 0};
+
+  cout << up_left;
+  for (size_t c = 0; c < s.size(); c++) cout << horizontal;
+  cout << up_right << endl;
+
+  for (auto row : s) {
+    cout << vertical;
+    for (Pixel col : row) cout << col;
+    cout << vertical << endl;
+  }
+  cout << down_left;
+  for (size_t c = 0; c < s.size(); c++) cout << horizontal;
+  cout << down_right << endl;
+}
+
 int main(int argc, char * argv[])
 {
-  Spiral *s = new Spiral(30, 30, Spiral::Direction::Trig, Spiral::Orientation::In);
+  Spiral *s = new Spiral(10, 10, Spiral::Direction::Trig, Spiral::Orientation::In);
   for(int i = 0; i < 100; i++) {
-    Spiral::Screen t = s->getNextScreen();
-    cout << (char)201;
-    for (int c = 0; c < (int)t.size(); c++) cout << (char)205;
-    cout << (char)187;
-    cout << endl;
-    for (auto row : t) {
-      cout << (char)186;
-      for (Pixel col : row) {
-        cout << col.r;
-      }
-      cout << (char)186;
-      cout << endl;
-    }
-    cout << (char)200;
-    for (int c = 0; c < (int)t.size(); c++) cout << (char)205;
-    cout << (char)216;
-    cout << endl;
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    print_screen(s->getNextScreen());
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
   }
   return 0;
 }

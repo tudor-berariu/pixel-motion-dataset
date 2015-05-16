@@ -13,3 +13,8 @@ Pixel Pixel::getBackground() {
   Pixel back;
   return back;
 }
+
+ostream& operator<<(ostream& s, const Pixel& p) {
+  s << p.r;
+  return s;
+}

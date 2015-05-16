@@ -11,8 +11,6 @@ using namespace std;
 class Spiral {
 
 public:
-  using Screen = vector<vector<Pixel>>;
-
   enum class Direction {Trig, Clock};
   enum class Orientation {In, Out};
 

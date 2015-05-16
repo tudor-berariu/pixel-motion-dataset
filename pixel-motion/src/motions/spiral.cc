@@ -17,14 +17,18 @@ Spiral::Spiral(int height, int width, Direction direction, Orientation orientati
 Spiral::Spiral(int height, int width, Direction direction, Orientation orientation)
   : Spiral(height, width, direction, orientation, 1.0) { }
 
-Spiral::Screen Spiral::getNextScreen() {
+Screen Spiral::getNextScreen() {
   Screen screen(height, vector<Pixel>(width));
   for (vector<Pixel>& r : screen) {
     fill(r.begin(), r.end(), Pixel::getBackground());
   }
+
   if((row + col) < width) {
     if(row < col) {
-      col++;
+      if (direction == Direction::Trig)
+        col++;
+      else
+        col--;
     } else {
       row--;
     }
@@ -35,7 +39,7 @@ Spiral::Screen Spiral::getNextScreen() {
       col--;
     }
   }
+
   screen[row][col] = Pixel::getRed();
   return screen;
 }
-
